@@ -4,7 +4,12 @@
 
 你可以 clone 本库，并查看utils文件夹内部的 routerBus 文件
 
-
+项目里的 index 和 logs 页面用到了页面预请求
+### 一个简单的预请求实现
+ * 首先在 app 全局 globalData 建立 两个空对象 pagesEvent  和 preData ，并引入该脚本
+ * 跳转路由时使用 gotoRouter ,只支持绝对路径。
+ * 在预加载页面重写 app.globalData.pagesEvent[pageName] pageName 为绝对路径，函数参数为路由参数的健值对
+ * 在预加载页面onLoad 事件通过 app.globalData.preData[pageName] 获取事件返回结过
 ## 原理
 我们先在小程序做个实验。
 
